@@ -9,6 +9,7 @@ A minimal React + TypeScript starter app demonstrating **on-device AI in the bro
 | **Chat** | Stream text from an on-device LLM (SmolLM2 360M) |
 | **Vision** | Point your camera and describe what the VLM sees (LFM2-VL 450M) |
 | **Voice** | Speak naturally — VAD detects speech, STT transcribes, LLM responds, TTS speaks back |
+| **Code** | 🆕 AI Code Assistant with Tool Calling — write, execute, and debug code with live preview |
 
 ## Quick Start
 
@@ -58,6 +59,7 @@ src/
 │   ├── ChatTab.tsx        # LLM streaming chat
 │   ├── VisionTab.tsx      # Camera + VLM inference
 │   ├── VoiceTab.tsx       # Full voice pipeline
+│   ├── CodeTab.tsx        # 🆕 AI Code Assistant with Tool Calling
 │   └── ModelBanner.tsx    # Download progress UI
 └── styles/
     └── index.css          # Dark theme CSS
@@ -80,6 +82,23 @@ Edit the `MODELS` array in `src/runanywhere.ts`:
 ```
 
 Any GGUF model compatible with llama.cpp works for LLM/VLM. STT/TTS/VAD use sherpa-onnx models.
+
+## 🆕 AI Code Assistant Feature
+
+The **Code** tab demonstrates RunAnywhere's powerful **Tool Calling** capabilities:
+
+- 💻 **Live Code Editor** - Write HTML/CSS/JS with real-time preview
+- 🤖 **AI Assistant** - Chat with AI to generate, debug, and improve code
+- 🔧 **Tool Calling** - AI can execute JavaScript, update preview, and read current code
+- 📚 **Templates** - Quick start with pre-built examples (Counter, Animations, etc.)
+
+See [CODE_ASSISTANT_README.md](./CODE_ASSISTANT_README.md) for full documentation.
+
+### Example Interactions:
+- "Create a todo list app" → AI generates complete HTML/CSS/JS
+- "Calculate fibonacci(10)" → AI executes code and returns result
+- "Add dark mode to this" → AI reads current code and enhances it
+- "Explain how flexbox works" → AI creates interactive demo
 
 ## Deployment
 

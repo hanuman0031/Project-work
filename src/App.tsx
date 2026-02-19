@@ -3,8 +3,9 @@ import { initSDK, getAccelerationMode } from './runanywhere';
 import { ChatTab } from './components/ChatTab';
 import { VisionTab } from './components/VisionTab';
 import { VoiceTab } from './components/VoiceTab';
+import { CodeTab } from './components/CodeTab';
 
-type Tab = 'chat' | 'vision' | 'voice';
+type Tab = 'chat' | 'vision' | 'voice' | 'code';
 
 export function App() {
   const [sdkReady, setSdkReady] = useState(false);
@@ -55,12 +56,16 @@ export function App() {
         <button className={activeTab === 'voice' ? 'active' : ''} onClick={() => setActiveTab('voice')}>
           🎙️ Voice
         </button>
+        <button className={activeTab === 'code' ? 'active' : ''} onClick={() => setActiveTab('code')}>
+          💻 Code
+        </button>
       </nav>
 
       <main className="tab-content">
         {activeTab === 'chat' && <ChatTab />}
         {activeTab === 'vision' && <VisionTab />}
         {activeTab === 'voice' && <VoiceTab />}
+        {activeTab === 'code' && <CodeTab />}
       </main>
     </div>
   );
